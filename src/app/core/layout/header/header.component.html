@@ -1,20 +1,31 @@
-<header class="flex justify-between items-center p-4 border-b border-none sm:mt-3 md:mt-4">
+<header
+  class="flex justify-between items-center p-4 border-b border-none sm:mt-3 md:mt-4"
+>
   <img src="/assets/shared/desktop/logo.svg" alt="" />
 
   <button (click)="toggleMenu()" class="md:hidden border-none">
-    <img *ngIf="!menuOpen()" class="burguerMenu" src="/assets/shared/mobile/icon-hamburger.svg" alt="Menu" /><img
-      *ngIf="menuOpen()" class="burguerMenu" src="/assets/shared/mobile/icon-close.svg" alt="Close menu" />
+    @if(!menuOpen()){<img
+      class="burguerMenu"
+      src="/assets/shared/mobile/icon-hamburger.svg"
+      alt="Menu"
+    />}@else {<img
+      class="burguerMenu"
+      src="/assets/shared/mobile/icon-close.svg"
+      alt="Close menu"
+    />}
   </button>
 
   <nav class="hidden md:flex gap-6 text-gray-500 font-semibold text-sm">
-    <a href="#" >HOME</a>
-    <a href="#" >ABOUT US</a>
+    <a href="#">HOME</a>
+    <a href="#">ABOUT US</a>
     <a href="#">CREATE YOU PLAN</a>
   </nav>
 </header>
-<nav *ngIf="menuOpen()"
-  class="bg-white-400/10 flex flex-col text-center gap-4 p-4 border-b md:hidden border-none font-extrabold">
-  <a href="#" >Home</a>
-  <a href="#" >About Us</a>
-  <a href="#" >Create Your Plan</a>
+<nav
+  *ngIf="menuOpen()"
+  class="bg-white-400/10 flex flex-col text-center gap-4 p-4 border-b md:hidden border-none font-extrabold"
+>
+  <a href="#">Home</a>
+  <a href="#">About Us</a>
+  <a href="#">Create Your Plan</a>
 </nav>
