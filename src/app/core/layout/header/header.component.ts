@@ -1,0 +1,16 @@
+import { NgIf } from '@angular/common';
+import { Component, signal } from '@angular/core';
+
+@Component({
+  selector: 'app-header',
+  imports: [NgIf],
+  templateUrl: './header.component.html',
+  styleUrl: './header.component.css',
+})
+export class HeaderComponent {
+  menuOpen = signal(false);
+
+  toggleMenu() {
+    this.menuOpen.update((value) => !value);
+  }
+}
