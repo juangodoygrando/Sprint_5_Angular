@@ -13,6 +13,3 @@ body {
   margin: 0 auto;
 }
 
-.burguerMenuIcon {
-  @apply w-5 h-4;
-}
