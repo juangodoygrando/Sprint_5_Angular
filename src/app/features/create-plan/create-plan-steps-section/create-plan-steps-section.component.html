@@ -1,17 +1,17 @@
-<div class="bg-[#343e4c] py-2">
-  @for (item of step(); track $index) {
-    <step-card [stepItem]="item"/>
-  }
+<div class="bg-[#343e4c] py-2 md:min-h-auto">
+  <div class="hidden md:block relative w-[61%] my-10 left-14">
+    <div
+      class="absolute inset-x-0 top-1/2 h-[2px] bg-[#FDD6BA] bg-opacity-70"
+    ></div>
+    <div class="relative z-10 flex justify-between gap-4 mx-auto">
+      <span class="circle"></span>
+      <span class="circle"></span>
+      <span class="circle"></span>
+    </div>
+  </div>
+  <div class="md:w-[87%] md:min-h-auto md:grid md:grid-cols-3 md:gap-6 md:ml-5">
+    @for (item of step(); track $index) {
+    <step-card [stepItem]="item" />
+    }
+  </div>
 </div>
-
-
-<!--
-linea con circulos
-
-<div class="relative w-full my-8">
-  <div class="absolute inset-x-0 top-1/2 h-px bg-gray-400/60"></div>
-  <div class="relative z-10 flex justify-between px-4">
-    <span class="w-4 h-4 border-2 border-gray-400 rounded-full"></span>
-    <span class="w-4 h-4 border-2 border-gray-400 rounded-full"></span>
-    <span class="w-4 h-4 border-2 border-gray-400 rounded-full"></span>
-  </div> -->
