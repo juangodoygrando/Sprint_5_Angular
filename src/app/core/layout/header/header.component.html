@@ -1,12 +1,6 @@
-<header
-  class="flex justify-between items-center py-2 border-b border-none sm:mt-3 md:mt-4 z-50"
->
-  <div class="flex justify-between w-full mt-2 mb-4">
-    <img
-      src="/assets/shared/desktop/logo.svg"
-      alt="logo coffeeroasters"
-      class="h-3"
-    />
+<header class="fixed top-0 left-0 w-full z-50 h-16 bg-white ">
+  <div class="flex justify-between items-center h-full w-[90%] mx-auto">
+    <img src="/assets/shared/desktop/logo.svg" alt="logo coffeeroasters" />
 
     <button (click)="toggleMenu()" class="md:hidden border-none">
       @if(!menuOpen()){<img
@@ -19,20 +13,20 @@
         alt="Close menu"
       />}
     </button>
-  </div>
 
-  <nav
-    class="hidden md:flex gap-6 whitespace-nowrap text-gray-500 font-semibold text-[10px]"
-  >
-    <a href="#">HOME</a>
-    <a href="#">ABOUT US</a>
-    <a href="#">CREATE YOU PLAN</a>
-  </nav>
+    <nav
+      class="hidden md:flex gap-6 whitespace-nowrap text-gray-500 font-semibold text-xs"
+    >
+      <a href="#">HOME</a>
+      <a href="#">ABOUT US</a>
+      <a href="#">CREATE YOU PLAN</a>
+    </nav>
+  </div>
 </header>
 
 @if(menuOpen()){
 <nav
-  class="fixed w-screen h-screen left-0 z-50 bg-white/90 flex flex-col text-center gap-4 font-bold"
+  class="fixed top-16 w-screen h-screen left-0 z-40 bg-white/90 flex flex-col text-center gap-4 font-bold"
 >
   <a href="#">Home</a>
   <a href="#">About Us</a>
