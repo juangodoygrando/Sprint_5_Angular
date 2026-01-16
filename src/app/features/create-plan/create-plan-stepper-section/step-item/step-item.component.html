@@ -1,1 +1,9 @@
-<p>step-item works!</p>
+<div class=" bg-red-400">
+  @for (item of stepForItem(); track $index) {
+    <div>
+      <div>{{ item.stepNumber }}</div>
+      <div>{{ item.stepLabel }}</div>
+
+    </div>
+  }
+</div>

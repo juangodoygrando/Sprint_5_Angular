@@ -1,11 +1,12 @@
-import { Component } from '@angular/core';
+import { Component, input } from '@angular/core';
+import { Stepper } from '../../../../shared/interfaces/steppers.interface';
 
 @Component({
-  selector: 'app-step-content',
+  selector: 'step-content',
   imports: [],
   templateUrl: './step-content.component.html',
-  styleUrl: './step-content.component.css'
+  styleUrl: './step-content.component.css',
 })
 export class StepContentComponent {
-
+  stepForContent = input<Stepper[]>();
 }
