@@ -1,5 +1,6 @@
-import { Component, input } from '@angular/core';
-import { Stepper } from '../../../../shared/interfaces/steppers.interface';
+import { Component, inject, input } from '@angular/core';
+import { OrderState, Stepper } from '../../../../shared/interfaces/steppers.interface';
+import { CoffeePlanService } from '../../../../services/coffee-plan.service';
 
 @Component({
   selector: 'step-content',
@@ -9,4 +10,10 @@ import { Stepper } from '../../../../shared/interfaces/steppers.interface';
 })
 export class StepContentComponent {
   stepForContent = input<Stepper[]>();
+
+  coffeePlanService = inject(CoffeePlanService);
+
+  selectedId(step: keyof OrderState, optionId: number) {
+    this.coffeePlanService.set(step, optionId);
+  }
 }

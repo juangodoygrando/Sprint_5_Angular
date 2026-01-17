@@ -13,7 +13,7 @@ export class CoffeePlanService {
     delivery: null,
   });
 
-  set(step: keyof  OrderState, value: any) {
+  set(step: keyof OrderState, value: number) {
     this.orderState.update((s) => ({ ...s, [step]: value }));
   }
 

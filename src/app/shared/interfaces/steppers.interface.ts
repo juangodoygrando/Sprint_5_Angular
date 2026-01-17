@@ -1,5 +1,7 @@
 export interface Stepper {
+  [x: string]: any;
   stepNumber: string;
+  orderState: keyof OrderState;
   stepLabel: string;
   stepTitle: string;
   stepOptions: [
@@ -22,9 +24,9 @@ export interface Stepper {
 }
 
 export interface OrderState {
-  brewMethod: string | null;
-  beanType: string | null;
-  bagSize: string | null;
-  grindLevel: string | null;
-  delivery: string | null;
+  brewMethod: number | null;
+  beanType: number | null;
+  bagSize: number | null;
+  grindLevel: number | null;
+  delivery: number | null;
 }
