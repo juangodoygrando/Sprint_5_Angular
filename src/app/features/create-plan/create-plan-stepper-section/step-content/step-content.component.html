@@ -1,17 +1,21 @@
 <div class="bg-white px-6 py-6">
-  @for (item of stepForContent(); track $index) {
-  <div class="mb-6">
-    <div class="mb-4">
-      <h2 class="text-gray-700 font-bold text-lg mb-2">{{ item.stepLabel }}</h2>
-      <div class="border-b-2 border-teal-500 w-12"></div>
-    </div>
+  @for (item of stepForContent(); track item.orderState) {
+  <details class="mb-6">
+    <summary class="text-gray-700 font-bold text-lg mb-2">
+      {{ item.stepLabel }}
+    </summary>
+
     <div class="space-y-4">
-      @for (option of item.stepOptions; track $index) {
+      @for (option of item.stepOptions; track option.stepOptionId) {
       <div
-        class="bg-[#E1DDDA] p-4 rounded"
-        (click)="selectedId(item.orderState, option.stepOptionId)"
-        [class.bg-[#0E8684]]="
-          coffeePlanService.get()[item.orderState] === option.stepOptionId
+        class="option-card"
+        [class.selected]="
+          coffeePlanService.orderState()[item.orderState] ===
+          option.stepOptionId
+        "
+        (click)="
+          selectedId(item.orderState, option.stepOptionId);
+          
         "
       >
         <p class="font-semibold text-sm mb-2">{{ option.stepOptionTitle }}</p>
@@ -21,6 +25,6 @@
       </div>
       }
     </div>
-  </div>
+  </details>
   }
 </div>

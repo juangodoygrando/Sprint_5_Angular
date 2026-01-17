@@ -5,7 +5,7 @@ import { OrderState } from '../shared/interfaces/steppers.interface';
   providedIn: 'root',
 })
 export class CoffeePlanService {
-  private orderState = signal<OrderState>({
+   orderState = signal<OrderState>({
     brewMethod: null,
     beanType: null,
     bagSize: null,

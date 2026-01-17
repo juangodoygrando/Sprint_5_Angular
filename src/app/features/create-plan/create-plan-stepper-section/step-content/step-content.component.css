@@ -1,0 +1,9 @@
+.option-card {
+  @apply p-4 rounded cursor-pointer transition-colors;
+  background-color: #E1DDDA;
+}
+
+.option-card.selected {
+  background-color: #0E8684;
+  color: white;
+}

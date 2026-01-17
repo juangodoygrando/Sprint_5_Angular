@@ -14,6 +14,8 @@ export class StepContentComponent {
   coffeePlanService = inject(CoffeePlanService);
 
   selectedId(step: keyof OrderState, optionId: number) {
+    console.log('Seleccionado:', step, optionId);
     this.coffeePlanService.set(step, optionId);
+    console.log('Estado actual:', this.coffeePlanService.get());
   }
 }
