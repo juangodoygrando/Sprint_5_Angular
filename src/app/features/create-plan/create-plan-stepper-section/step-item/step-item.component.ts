@@ -10,4 +10,10 @@ import { Stepper } from '../../../../shared/interfaces/steppers.interface';
 })
 export class StepItemComponent {
   stepForItem = input<Stepper[]>();
+
+  stepNumberSelected: string | null = null
+
+  selectedStepItem(i: string) {
+    this.stepNumberSelected=i
+  }
 }

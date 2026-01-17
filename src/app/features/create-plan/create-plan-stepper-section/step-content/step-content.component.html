@@ -13,10 +13,7 @@
           coffeePlanService.orderState()[item.orderState] ===
           option.stepOptionId
         "
-        (click)="
-          selectedId(item.orderState, option.stepOptionId);
-          
-        "
+        (click)="selectedId(item.orderState, option.stepOptionId)"
       >
         <p class="font-semibold text-sm mb-2">{{ option.stepOptionTitle }}</p>
         <p class="text-xs font-light opacity-90">
