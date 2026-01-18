@@ -1,19 +1,17 @@
-<div class="py-6">
-  @for (item of stepForItem(); track $index) {
+<nav class="py-6">
+  <ol class="flex flex-col gap-2">
+    @for (item of stepForItem(); track $index) {
 
-  <div
-    class="flex flex-row gap-4 items-center border-t-2 first:border-none"
-    (click)="selectStep(item.stepNumber)"
-    [class.opacity-50]="coffeePlanService.lastOpenedStep() !== item.stepNumber"
-    [class.grayscale]="coffeePlanService.lastOpenedStep() !== item.stepNumber"
-  >
-    <span class="text-[#0E8684] font-extrabold text-sm">{{
-      item.stepNumber
-    }}</span>
-    <h2 class="font-extrabold text-base text-[#343e4c]">
-      {{ item.stepLabel }}
-    </h2>
-  </div>
+    <li class="flex flex-row gap-6 items-center border-t-2 first:border-none py-2"
+      (click)="selectStep(item.stepNumber)"
+      [class.opacity-50]="coffeePlanService.lastOpenedStep() !== item.stepNumber"
+      [class.grayscale]="coffeePlanService.lastOpenedStep() !== item.stepNumber">
 
-  }
-</div>
+      <span class="text-[#0E8684] font-extrabold text-xl">{{item.stepNumber}}</span>
+
+      <h2 class="font-extrabold text-xl text-[#343e4c]">{{ item.stepLabel }}</h2>
+    </li>
+
+    }
+  </ol>
+</nav>
