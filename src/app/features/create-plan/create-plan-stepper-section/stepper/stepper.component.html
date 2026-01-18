@@ -1,8 +1,8 @@
-<div class="flex flex-col gap-0  mx-auto justify-start">
+<div class="grid grid-cols-1 mx-auto justify-start md:grid-cols-3  md:w-11/12">
   <div class="w-full ">
     <step-item [stepForItem]="steps" />
   </div>
-  <div class="w-full bg-white">
+  <div class="w-full md:col-span-2">
     <step-content [stepForContent]="steps" />
   </div>
 </div>
