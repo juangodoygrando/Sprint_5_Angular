@@ -2,10 +2,11 @@ import { Component, inject } from '@angular/core';
 import { StepItemComponent } from "../step-item/step-item.component";
 import { StepContentComponent } from "../step-content/step-content.component";
 import { StepperService } from '../../../../services/stepper.service';
+import { StepSummaryComponent } from "../step-summary/step-summary.component";
 
 @Component({
   selector: 'app-stepper',
-  imports: [StepItemComponent, StepContentComponent],
+  imports: [StepItemComponent, StepContentComponent, StepSummaryComponent],
   templateUrl: './stepper.component.html',
   styleUrl: './stepper.component.css',
 })
@@ -13,7 +14,7 @@ export class StepperComponent {
   stepperService = inject(StepperService);
 
   private _steps = this.stepperService.stepperData();
-  
+
   public get steps() {
     return this._steps;
   }
