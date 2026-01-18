@@ -3,14 +3,16 @@
 
   <div
     class="flex flex-row gap-4 items-center border-t-2 first:border-none"
-    (click)="selectedStepItem(item.stepNumber)"
-    [class.opacity-50]="stepNumberSelected !== item.stepNumber"
-  [class.grayscale]="stepNumberSelected !== item.stepNumber"
+    (click)="selectStep(item.stepNumber)"
+    [class.opacity-50]="coffeePlanService.lastOpenedStep() !== item.stepNumber"
+    [class.grayscale]="coffeePlanService.lastOpenedStep() !== item.stepNumber"
   >
     <span class="text-[#0E8684] font-extrabold text-sm">{{
       item.stepNumber
     }}</span>
-    <h2 class="font-extrabold text-base text-[#343e4c]">{{ item.stepLabel }}</h2>
+    <h2 class="font-extrabold text-base text-[#343e4c]">
+      {{ item.stepLabel }}
+    </h2>
   </div>
 
   }

@@ -1,5 +1,8 @@
 import { Component, inject, input } from '@angular/core';
-import { OrderState, Stepper } from '../../../../shared/interfaces/steppers.interface';
+import {
+  OrderState,
+  Stepper,
+} from '../../../../shared/interfaces/steppers.interface';
 import { CoffeePlanService } from '../../../../services/coffee-plan.service';
 
 @Component({
@@ -15,5 +18,11 @@ export class StepContentComponent {
 
   selectedId(step: keyof OrderState, optionId: number) {
     this.coffeePlanService.set(step, optionId);
+  }
+  onToggle(step: string, event: Event) {
+    const details = event.target as HTMLDetailsElement;
+    if (details.open) {
+      this.coffeePlanService.lastOpenedStep.set(step);
+    }
   }
 }

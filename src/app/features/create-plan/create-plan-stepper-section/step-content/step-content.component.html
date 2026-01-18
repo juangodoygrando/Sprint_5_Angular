@@ -1,20 +1,17 @@
 <div class="bg-white px-6 py-6">
   @for (item of stepForContent(); track item.orderState) {
-  <details class="mb-6">
+  <details class="mb-6" [open]="coffeePlanService.currentStep() === item.stepNumber"
+    (toggle)="onToggle(item.stepNumber, $event)">
     <summary class="text-gray-700 font-bold text-lg mb-2">
       {{ item.stepLabel }}
     </summary>
 
     <div class="space-y-4">
       @for (option of item.stepOptions; track option.stepOptionId) {
-      <div
-        class="option-card"
-        [class.selected]="
+      <div class="option-card" [class.selected]="
           coffeePlanService.orderState()[item.orderState] ===
           option.stepOptionId
-        "
-        (click)="selectedId(item.orderState, option.stepOptionId)"
-      >
+        " (click)="selectedId(item.orderState, option.stepOptionId)">
         <p class="font-semibold text-sm mb-2">{{ option.stepOptionTitle }}</p>
         <p class="text-xs font-light opacity-90">
           {{ option.stepOptionDescribe }}

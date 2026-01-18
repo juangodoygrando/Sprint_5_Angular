@@ -1,5 +1,6 @@
-import { Component, input } from '@angular/core';
+import { Component, inject, input } from '@angular/core';
 import { Stepper } from '../../../../shared/interfaces/steppers.interface';
+import { CoffeePlanService } from '../../../../services/coffee-plan.service';
 
 
 @Component({
@@ -10,10 +11,11 @@ import { Stepper } from '../../../../shared/interfaces/steppers.interface';
 })
 export class StepItemComponent {
   stepForItem = input<Stepper[]>();
+  coffeePlanService = inject(CoffeePlanService);
 
-  stepNumberSelected: string | null = null
-
-  selectedStepItem(i: string) {
-    this.stepNumberSelected=i
+  selectStep(step: string) {
+    this.coffeePlanService.setCurrentStep(step);
   }
+
+
 }

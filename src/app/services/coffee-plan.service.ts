@@ -5,7 +5,7 @@ import { OrderState } from '../shared/interfaces/steppers.interface';
   providedIn: 'root',
 })
 export class CoffeePlanService {
-   orderState = signal<OrderState>({
+  orderState = signal<OrderState>({
     brewMethod: null,
     beanType: null,
     bagSize: null,
@@ -20,4 +20,12 @@ export class CoffeePlanService {
   get() {
     return this.orderState();
   }
+
+  currentStep = signal<string | null>(null);
+
+  setCurrentStep(step: string) {
+    this.currentStep.set(step);
+  }
+
+  lastOpenedStep = signal<string | null>(null);
 }
