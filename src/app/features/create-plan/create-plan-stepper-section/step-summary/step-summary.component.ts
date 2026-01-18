@@ -10,5 +10,9 @@ import { CoffeePlanService } from '../../../../services/coffee-plan.service';
 export class StepSummaryComponent {
   coffeePlanService = inject(CoffeePlanService);
 
-  orderStateList=this.coffeePlanService.orderState
+  orderStateList = this.coffeePlanService.orderState;
+
+  getTitleById(step: any, id: any) {
+    return this.coffeePlanService.getTitleById(step, id);
+  }
 }

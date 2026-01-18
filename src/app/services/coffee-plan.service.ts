@@ -1,5 +1,6 @@
-import { Injectable, signal } from '@angular/core';
+import { inject, Injectable, signal } from '@angular/core';
 import { OrderState } from '../shared/interfaces/steppers.interface';
+import { StepperService } from './stepper.service';
 
 @Injectable({
   providedIn: 'root',
@@ -28,4 +29,19 @@ export class CoffeePlanService {
   }
 
   lastOpenedStep = signal<string | null>(null);
+
+  stepperData = inject(StepperService);
+
+  getTitleById(step: keyof OrderState, id: number | null) {
+    
+    let stepSelected = this.stepperData
+      .stepperData()
+      .find((s) => s.orderState === step);
+
+    let searchTitle = stepSelected?.stepOptions.find(
+      (s) => s.stepOptionId === id
+    );
+
+    return searchTitle?.stepOptionTitle;
+  }
 }

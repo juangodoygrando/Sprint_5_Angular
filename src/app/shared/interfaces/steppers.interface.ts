@@ -1,5 +1,5 @@
 export interface Stepper {
-  [x: string]: any;
+  
   stepNumber: string;
   orderState: keyof OrderState;
   stepLabel: string;
