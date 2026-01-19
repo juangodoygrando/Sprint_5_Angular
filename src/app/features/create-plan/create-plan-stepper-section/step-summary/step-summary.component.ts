@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, input } from '@angular/core';
 import { CoffeePlanService } from '../../../../services/coffee-plan.service';
 
 @Component({
@@ -15,4 +15,6 @@ export class StepSummaryComponent {
   getTitleById(step: any, id: any) {
     return this.coffeePlanService.getTitleById(step, id);
   }
+
+  orderSummary = input<string>();
 }

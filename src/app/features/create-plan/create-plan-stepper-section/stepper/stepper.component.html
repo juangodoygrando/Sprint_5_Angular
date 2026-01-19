@@ -6,7 +6,11 @@
   </div>
   <div class="w-full md:col-span-2">
     <step-content [stepForContent]="steps" />
-    <step-summary />
+    <step-summary
+      ><h3 title class="font-thin my-2 opacity-40">
+        ORDER SUMMARY
+      </h3></step-summary
+    >
     <div class="justify-self-end mb-4">
       <button-create-plan [disabled]="disabled()"></button-create-plan>
     </div>
