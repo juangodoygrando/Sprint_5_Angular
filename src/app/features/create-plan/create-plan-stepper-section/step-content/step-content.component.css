@@ -1,6 +1,6 @@
 .option-card {
   @apply p-4 h-full rounded cursor-pointer transition-colors;
-  background-color: #E1DDDA;
+  background-color: #F4F1EB;
 }
 
 .option-card.selected {

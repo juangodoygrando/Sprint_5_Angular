@@ -6,9 +6,9 @@
     (toggle)="onToggle(item.stepNumber, $event)"
   >
     <summary
-      class="text-gray-500 font-bold list-none flex flex-row justify-between items-center"
+      class="text-gray-500 font-extrabold list-none flex flex-row justify-between items-center"
     >
-      <h2 class="w-10/12 text-xl tracking-wide md:text-3xl">{{ item.stepTitle }}</h2>
+      <h2 class="w-10/12 text-xl  tracking-wide md:text-3xl">{{ item.stepTitle }}</h2>
       <img
         src="assets/plan/desktop/icon-arrow.svg"
         class="w-4 transition-transform"
@@ -24,7 +24,7 @@
           option.stepOptionId
         "
         (click)="selectedId(item.orderState, option.stepOptionId)"
-        
+
       >
         <p class="font-bold text-sm mb-2 md:text-base">{{ option.stepOptionTitle }}</p>
         <p class="text-xs font-light opacity-90 md">
