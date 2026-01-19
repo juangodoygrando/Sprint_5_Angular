@@ -1,9 +1,22 @@
-<div class="w-full p-6 mx-auto bg-[#343e4c] my-4 text-white rounded-lg">
-  <h3 class="font-thin my-2 opacity-40">ORDER SUMMARY</h3>
-  <p class="text-xl font-extrabold">"I drink my coffe using
-    {{getTitleById("brewMethod", orderStateList().brewMethod) || "_____" }},
-    with a {{getTitleById("beanType", orderStateList().beanType) || "_____"}} type of
-    bean. {{getTitleById("bagSize", orderStateList().bagSize) || "_____"}} sent to me
-    {{ getTitleById("delivery", orderStateList().delivery)|| "_____"}}"
+<div class="w-full p-6 mx-auto bg-[#343e4c] my-4 text-white rounded-lg md:px-16">
+  <h3 class="font-thin my-2 opacity-40 ">ORDER SUMMARY</h3>
+  <p class="text-xl font-extrabold ">
+    "I drink my coffe using
+    <span class="textCian">{{
+      getTitleById("brewMethod", orderStateList().brewMethod) || "_____"
+    }}</span
+    >, with a
+    <span class="textCian">{{
+      getTitleById("beanType", orderStateList().beanType) || "_____"
+    }}</span>
+    type of bean.
+    <span class="textCian">{{
+      getTitleById("bagSize", orderStateList().bagSize) || "_____"
+    }}</span>
+    sent to me
+    <span class="textCian">{{
+      getTitleById("delivery", orderStateList().delivery) || "_____"
+    }}</span>
+    "
   </p>
 </div>
