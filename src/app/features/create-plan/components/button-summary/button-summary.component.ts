@@ -1,11 +1,14 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { CoffeePlanService } from '../../../../services/coffee-plan.service';
 
 @Component({
-  selector: 'app-button-summary',
+  selector: 'button-summary',
   imports: [],
   templateUrl: './button-summary.component.html',
-  styleUrl: './button-summary.component.css'
+  styleUrl: './button-summary.component.css',
 })
 export class ButtonSummaryComponent {
 
+  coffeePlanService = inject(CoffeePlanService);
+  
 }
