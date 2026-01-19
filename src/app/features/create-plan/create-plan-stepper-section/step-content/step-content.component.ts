@@ -25,5 +25,4 @@ export class StepContentComponent {
       this.coffeePlanService.lastOpenedStep.set(step);
     }
   }
-  
 }

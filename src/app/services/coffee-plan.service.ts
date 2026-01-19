@@ -44,12 +44,14 @@ export class CoffeePlanService {
     return searchTitle?.stepOptionTitle;
   }
 
-
   isOrderComplete = computed(() => {
     const state = this.orderState();
 
-    console.log(Object.values(state).every(value => value !== null));
-    
-    return Object.values(state).every(value => value !== null);
+    return Object.entries(state).every(([key, value]) => {
+      if (state.brewMethod === 1 && key === 'grindLevel') {
+        return true;
+      }
+      return value !== null;
+    });
   });
 }
