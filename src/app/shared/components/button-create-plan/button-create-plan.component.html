@@ -1,6 +1,6 @@
 <button
   [attr.disabled]="disabled() ? '' : null"
-  class="bg-[#0e8784] text-white px-10 py-4 rounded-md font-serif font-black cursor-pointer transition-colors duration-200 disabled:bg-[#e2dedb] disabled:text-[#83888f] disabled:cursor-not-allowed"
+  class="bg-[#0e8784] text-white w-full px-4 py-2 rounded-md font-serif font-black cursor-pointer transition-colors duration-200 disabled:bg-[#e2dedb] disabled:text-[#83888f] disabled:cursor-not-allowed"
 >
-  Create your plan
+  {{ label() }}
 </button>

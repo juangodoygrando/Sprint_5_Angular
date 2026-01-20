@@ -6,11 +6,15 @@
   </div>
   <div class="w-full md:col-span-2">
     <step-content [stepForContent]="steps" />
-    <step-summary
-      ><h3 title class="font-thin my-2 opacity-40">
-        ORDER SUMMARY
-      </h3></step-summary
+    <div
+      class="bg-[#343e4c] w-full py-6 px-4 mx-auto my-4 text-sm text-white rounded-lg md:px-16"
     >
+      <step-summary
+        ><h3 title class="font-thin my-2 opacity-40">
+          ORDER SUMMARY
+        </h3></step-summary
+      >
+    </div>
     <div class="justify-self-end mb-4">
       <button-create-plan
         [disabled]="disabled()"
@@ -18,8 +22,24 @@
       ></button-create-plan>
     </div>
   </div>
+
+
   @if(showModal()){<modal (close)="closeModal()">
-    <!-- <step-summary></step-summary> -->
-    </modal
+    <div class="bg-[#343e4c] w-full sticky top-0 left-0 px-6 py-4 rounded-t-lg">
+      <h3 class="text-white text-xl font-semibold">ORDER SUMMARY</h3>
+    </div>
+    <div class="px-6 py-6 leading-loose text-lg text-[#848990]">
+      <step-summary></step-summary>
+    </div>
+    <div class="px-6 pb-6 text-xs leading-relaxed text-gray-600">
+      <p>
+        Is this correct? You can proceed to checkout or go back to plan
+        selection if something is off. Subscription discount codes can also be
+        redeemed at the checkout.
+      </p>
+    </div>
+    <div class="px-6 pb-6">
+      <button-create-plan label="Checkout - $14.00/ mo"></button-create-plan>
+    </div> </modal
   >}
 </section>

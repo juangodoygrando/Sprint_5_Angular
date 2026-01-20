@@ -8,4 +8,5 @@ import { Component ,input } from '@angular/core';
 })
 export class ButtonCreatePlanComponent {
   disabled = input<boolean>(false);
+  label = input<string>('Create your plan');
 }
