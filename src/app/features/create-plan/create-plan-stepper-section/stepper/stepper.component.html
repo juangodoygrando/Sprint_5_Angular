@@ -12,7 +12,14 @@
       </h3></step-summary
     >
     <div class="justify-self-end mb-4">
-      <button-create-plan [disabled]="disabled()"></button-create-plan>
+      <button-create-plan
+        [disabled]="disabled()"
+        (click)="openModal()"
+      ></button-create-plan>
     </div>
   </div>
+  @if(showModal()){<modal (close)="closeModal()">
+    <!-- <step-summary></step-summary> -->
+    </modal
+  >}
 </section>
