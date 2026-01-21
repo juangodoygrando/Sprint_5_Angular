@@ -1,26 +1,18 @@
 export interface Stepper {
-  
   stepNumber: string;
   orderState: keyof OrderState;
   stepLabel: string;
   stepTitle: string;
-  stepOptions: [
-    {
-      stepOptionId: number;
-      stepOptionTitle: string;
-      stepOptionDescribe: string;
-    },
-    {
-      stepOptionId: number;
-      stepOptionTitle: string;
-      stepOptionDescribe: string;
-    },
-    {
-      stepOptionId: number;
-      stepOptionTitle: string;
-      stepOptionDescribe: string;
-    }
-  ];
+  stepDeliveryPrice?:number
+
+  stepOptions: {
+    stepOptionId: number;
+    stepOptionTitle: string;
+    stepOptionPrice?: number;
+    stepOptionQuantity?: number;
+    stepOptionCapsuleQuantity?: number;
+    stepOptionDescribe: string;
+  }[];
 }
 
 export interface OrderState {

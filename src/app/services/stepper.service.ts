@@ -11,18 +11,21 @@ const steppersData: Stepper[] = [
       {
         stepOptionId: 1,
         stepOptionTitle: 'Capsule',
+        stepOptionPrice: 0.85,
         stepOptionDescribe:
           'Compatible with Nespresso systems and similar brewers',
       },
       {
         stepOptionId: 2,
         stepOptionTitle: 'Filter',
+        stepOptionPrice: 2.2,
         stepOptionDescribe:
           'For pour over or drip methods like Aeropress, Chemex, and V60',
       },
       {
         stepOptionId: 3,
         stepOptionTitle: 'Espresso',
+        stepOptionPrice: 1.75,
         stepOptionDescribe:
           'Dense and finely ground beans for an intense, flavorful experience',
       },
@@ -37,18 +40,21 @@ const steppersData: Stepper[] = [
       {
         stepOptionId: 1,
         stepOptionTitle: 'Single Origin',
+        stepOptionPrice: 1.18,
         stepOptionDescribe:
           'Distinct, high quality coffee from a specific family-owned farm',
       },
       {
         stepOptionId: 2,
         stepOptionTitle: 'Decaf',
+        stepOptionPrice: 1.05,
         stepOptionDescribe:
           'Just like regular coffee, except the caffeine has been removed',
       },
       {
         stepOptionId: 3,
         stepOptionTitle: 'Blended',
+        stepOptionPrice: 1.15,
         stepOptionDescribe:
           'Combination of two or three dark roasted beans of organic coffees',
       },
@@ -63,20 +69,26 @@ const steppersData: Stepper[] = [
       {
         stepOptionId: 1,
         stepOptionTitle: '250g',
+        stepOptionQuantity: 2.5,
+        stepOptionCapsuleQuantity: 12,
         stepOptionDescribe:
           'Perfect for the solo drinker. Yields about 12 delicious cups.',
       },
       {
         stepOptionId: 2,
         stepOptionTitle: '500g',
+        stepOptionQuantity: 5,
+        stepOptionCapsuleQuantity: 28,
         stepOptionDescribe:
-          'Perfect option for a couple. Yields about 40 delectable cups.',
+          'Perfect option for a couple. Yields about 24 delectable cups.',
       },
       {
         stepOptionId: 3,
         stepOptionTitle: '1000g',
+        stepOptionQuantity: 10,
+        stepOptionCapsuleQuantity: 55,
         stepOptionDescribe:
-          'Perfect for offices and events. Yields about 90 delightful cups.',
+          'Perfect for offices and events. Yields about 50 delightful cups.',
       },
     ],
   },
@@ -111,22 +123,26 @@ const steppersData: Stepper[] = [
     orderState: 'delivery',
     stepLabel: 'Deliveries',
     stepTitle: 'How often should we deliver?',
+    stepDeliveryPrice: 2.3,
     stepOptions: [
       {
         stepOptionId: 1,
         stepOptionTitle: 'Every week',
+        stepOptionQuantity: 4,
         stepOptionDescribe:
           '$7.20 per shipment. Includes free first-class shipping.',
       },
       {
         stepOptionId: 2,
         stepOptionTitle: 'Every 2 weeks',
+        stepOptionQuantity: 2,
         stepOptionDescribe:
           '$9.60 per shipment. Includes free priority shipping.',
       },
       {
         stepOptionId: 3,
         stepOptionTitle: 'Every month',
+        stepOptionQuantity: 1,
         stepOptionDescribe:
           '$12.00 per shipment. Includes free priority shipping.',
       },
@@ -140,5 +156,5 @@ const steppersData: Stepper[] = [
 export class StepperService {
   stepperData = signal<Stepper[]>(steppersData);
 
-  
+
 }
