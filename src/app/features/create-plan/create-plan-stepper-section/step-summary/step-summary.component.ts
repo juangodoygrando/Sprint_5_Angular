@@ -13,7 +13,7 @@ export class StepSummaryComponent {
   orderStateList = this.coffeePlanService.orderState;
 
   getTitleById(step: any, id: any) {
-    return this.coffeePlanService.getTitleById(step, id);
+    return this.coffeePlanService.getStateById(step, id);
   }
 
   orderSummary = input<string>();

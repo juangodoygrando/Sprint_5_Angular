@@ -32,16 +32,16 @@ export class CoffeePlanService {
 
   stepperData = inject(StepperService);
 
-  getTitleById(step: keyof OrderState, id: number | null) {
+  getStateById(step: keyof OrderState, id: number | null) {
     let stepSelected = this.stepperData
       .stepperData()
       .find((s) => s.orderState === step);
 
-    let searchTitle = stepSelected?.stepOptions.find(
+    let searchState = stepSelected?.stepOptions.find(
       (s) => s.stepOptionId === id
     );
 
-    return searchTitle?.stepOptionTitle;
+    return searchState?.stepOptionTitle;
   }
 
   isOrderComplete = computed(() => {
