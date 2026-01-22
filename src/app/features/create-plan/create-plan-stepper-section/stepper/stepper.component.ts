@@ -7,7 +7,7 @@ import { StepSummaryComponent } from '../step-summary/step-summary.component';
 import { CoffeePlanService } from '../../../../services/coffee-plan.service';
 import { ButtonCreatePlanComponent } from '../../../../shared/components/button-create-plan/button-create-plan.component';
 import { ModalComponent } from '../../../../shared/components/modal/modal.component';
-import { PricingService } from '../../../../services/Pricing.service';
+import { PricingService } from '../../../../services/pricing.service';
 
 
 
