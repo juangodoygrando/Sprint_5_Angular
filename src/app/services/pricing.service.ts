@@ -1,5 +1,4 @@
-import { SelectedOption } from './../shared/interfaces/pricing.interface';
-import { inject, Injectable, signal } from '@angular/core';
+import { inject, Injectable } from '@angular/core';
 import { CoffeePlanService } from './coffee-plan.service';
 import { StepperService } from './stepper.service';
 
@@ -26,8 +25,8 @@ export class PricingService {
         ?.stepDeliveryPrice
     )
       return;
-debugger
-    let price = 0;
+
+    let price 
     let base = options.brew.stepOptionPrice * options.bean.stepOptionPrice;
 
     if (options.brew.stepOptionTitle === 'Capsule') {

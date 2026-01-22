@@ -15,7 +15,7 @@ export class CoffeePlanService {
     delivery: null,
   });
 
-  selectedOptions = signal<SelectedOption | null>(null);
+
 
   set(step: keyof OrderState, value: number) {
     this.orderState.update((s) => ({ ...s, [step]: value }));
@@ -57,18 +57,6 @@ export class CoffeePlanService {
       return value !== null;
     });
   });
-
-  getStepOption(step: keyof OrderState, id: number | null) {
-    let stepSelected = this.stepperData
-      .stepperData()
-      .find((s) => s.orderState === step);
-
-    let searchState = stepSelected?.stepOptions.find(
-      (s) => s.stepOptionId === id
-    );
-
-    return searchState;
-  }
 
   findOption(step: keyof OrderState, id: number | null) {
     if (id == null) return undefined;
