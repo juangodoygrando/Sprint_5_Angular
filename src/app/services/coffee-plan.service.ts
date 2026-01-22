@@ -1,6 +1,7 @@
 import { computed, inject, Injectable, signal } from '@angular/core';
 import { OrderState } from '../shared/interfaces/steppers.interface';
 import { StepperService } from './stepper.service';
+import { SelectedOption } from '../shared/interfaces/pricing.interface';
 
 @Injectable({
   providedIn: 'root',
@@ -13,6 +14,8 @@ export class CoffeePlanService {
     grindLevel: null,
     delivery: null,
   });
+
+  selectedOptions = signal<SelectedOption | null>(null);
 
   set(step: keyof OrderState, value: number) {
     this.orderState.update((s) => ({ ...s, [step]: value }));
@@ -54,4 +57,38 @@ export class CoffeePlanService {
       return value !== null;
     });
   });
+
+  getStepOption(step: keyof OrderState, id: number | null) {
+    let stepSelected = this.stepperData
+      .stepperData()
+      .find((s) => s.orderState === step);
+
+    let searchState = stepSelected?.stepOptions.find(
+      (s) => s.stepOptionId === id
+    );
+
+    return searchState;
+  }
+
+  findOption(step: keyof OrderState, id: number | null) {
+    if (id == null) return undefined;
+
+    return this.stepperData
+      .stepperData()
+      .find((s) => s.orderState === step)
+      ?.stepOptions.find((opt) => opt.stepOptionId === id);
+  }
+  getSelectedOptions(): SelectedOption {
+    const state = this.orderState();
+
+    return {
+      brew: this.findOption('brewMethod', state.brewMethod)!,
+      bean: this.findOption('beanType', state.beanType)!,
+      bag: this.findOption('bagSize', state.bagSize)!,
+      grind: this.findOption('grindLevel', state.grindLevel)!,
+      delivery: this.findOption('delivery', state.delivery)!,
+    };
+  }
+
+
 }

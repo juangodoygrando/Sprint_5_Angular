@@ -123,28 +123,25 @@ const steppersData: Stepper[] = [
     orderState: 'delivery',
     stepLabel: 'Deliveries',
     stepTitle: 'How often should we deliver?',
-    stepDeliveryPrice: 2.3,
+    stepDeliveryPrice: 3.3,
     stepOptions: [
       {
         stepOptionId: 1,
         stepOptionTitle: 'Every week',
         stepOptionQuantity: 4,
-        stepOptionDescribe:
-          '$7.20 per shipment. Includes free first-class shipping.',
+        stepOptionDescribe: 'Includes free first-class shipping.',
       },
       {
         stepOptionId: 2,
         stepOptionTitle: 'Every 2 weeks',
         stepOptionQuantity: 2,
-        stepOptionDescribe:
-          '$9.60 per shipment. Includes free priority shipping.',
+        stepOptionDescribe: 'Includes priority shipping.',
       },
       {
         stepOptionId: 3,
         stepOptionTitle: 'Every month',
         stepOptionQuantity: 1,
-        stepOptionDescribe:
-          '$12.00 per shipment. Includes free priority shipping.',
+        stepOptionDescribe: 'Secure and fast shipping.',
       },
     ],
   },

@@ -19,6 +19,7 @@
       <button-create-plan
         [disabled]="disabled()"
         (click)="openModal()"
+        (click)="pricingService.calculatePrice()"
       ></button-create-plan>
     </div>
   </div>
@@ -39,7 +40,7 @@
       </p>
     </div>
     <div class="px-6 pb-6">
-      <button-create-plan label="Checkout - $14.00/ mo"></button-create-plan>
+      <button-create-plan label="Checkout - {{totalPrice()}}€ /mo"></button-create-plan>
     </div> </modal
   >}
 </section>

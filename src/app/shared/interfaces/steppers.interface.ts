@@ -1,3 +1,5 @@
+import { StepOption } from "./pricing.interface";
+
 export interface Stepper {
   stepNumber: string;
   orderState: keyof OrderState;
@@ -5,18 +7,11 @@ export interface Stepper {
   stepTitle: string;
   stepDeliveryPrice?:number
 
-  stepOptions: {
-    stepOptionId: number;
-    stepOptionTitle: string;
-    stepOptionPrice?: number;
-    stepOptionQuantity?: number;
-    stepOptionCapsuleQuantity?: number;
-    stepOptionDescribe: string;
-  }[];
+  stepOptions:StepOption[]
 }
 
 export interface OrderState {
-  brewMethod: number | null;
+  brewMethod: number | null ;
   beanType: number | null;
   bagSize: number | null;
   grindLevel: number | null;
