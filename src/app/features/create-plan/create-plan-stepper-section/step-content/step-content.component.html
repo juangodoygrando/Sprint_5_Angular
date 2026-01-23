@@ -2,7 +2,7 @@
   @for (item of stepForContent(); track item.orderState) {
   <details
     class="mb-6"
-    [open]="coffeePlanService.currentStep() === item.stepNumber"
+    [open]="this.wizardService.currentStep()"
     (toggle)="onToggle(item.stepNumber, $event)"
   >
     <summary

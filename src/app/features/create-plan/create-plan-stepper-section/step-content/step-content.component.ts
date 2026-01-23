@@ -5,6 +5,8 @@ import {
 } from '../../../../shared/interfaces/steppers.interface';
 import { CoffeePlanService } from '../../../../services/coffee-plan.service';
 
+import { WizardService } from '../../../../services/wizard.service';
+
 @Component({
   selector: 'step-content',
   imports: [],
@@ -15,6 +17,7 @@ export class StepContentComponent {
   stepForContent = input<Stepper[]>();
 
   coffeePlanService = inject(CoffeePlanService);
+  wizardService = inject(WizardService);
 
   selectedId(step: keyof OrderState, optionId: number) {
     this.coffeePlanService.set(step, optionId);
@@ -22,7 +25,7 @@ export class StepContentComponent {
   onToggle(step: string, event: Event) {
     const details = event.target as HTMLDetailsElement;
     if (details.open) {
-      this.coffeePlanService.lastOpenedStep.set(step);
+      this.wizardService.lastOpenedStep.set(step);
     }
   }
 }

@@ -15,8 +15,6 @@ export class CoffeePlanService {
     delivery: null,
   });
 
-
-
   set(step: keyof OrderState, value: number) {
     this.orderState.update((s) => ({ ...s, [step]: value }));
   }
@@ -25,22 +23,13 @@ export class CoffeePlanService {
     return this.orderState();
   }
 
-  currentStep = signal<string | null>(null);
-
-  setCurrentStep(step: string) {
-    this.currentStep.set(step);
-  }
-
-  lastOpenedStep = signal<string | null>(null);
-
-
   getStateById(step: keyof OrderState, id: number | null) {
     let stepSelected = stepperData.find(
       (stepList) => stepList.orderState === step,
     );
 
     let searchState = stepSelected?.stepOptions.find(
-      (s) => s.stepOptionId === id
+      (s) => s.stepOptionId === id,
     );
 
     return searchState?.stepOptionTitle;
@@ -60,7 +49,8 @@ export class CoffeePlanService {
   findOption(step: keyof OrderState, id: number | null) {
     if (id == null) return undefined;
 
-    return stepperData.find((s) => s.orderState === step)
+    return stepperData
+      .find((s) => s.orderState === step)
       ?.stepOptions.find((opt) => opt.stepOptionId === id);
   }
   getSelectedOptions(): SelectedOption {
@@ -74,6 +64,4 @@ export class CoffeePlanService {
       delivery: this.findOption('delivery', state.delivery)!,
     };
   }
-
-
 }

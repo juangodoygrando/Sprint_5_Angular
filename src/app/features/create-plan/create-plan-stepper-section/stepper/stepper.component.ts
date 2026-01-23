@@ -1,4 +1,4 @@
-import { Component, computed, inject, input, signal } from '@angular/core';
+import { Component, computed, inject, signal } from '@angular/core';
 import { StepItemComponent } from '../step-item/step-item.component';
 import { StepContentComponent } from '../step-content/step-content.component';
 import { StepSummaryComponent } from '../step-summary/step-summary.component';

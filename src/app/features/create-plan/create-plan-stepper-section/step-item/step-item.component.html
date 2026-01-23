@@ -4,8 +4,8 @@
 
     <li class="flex flex-row gap-6 items-center border-t-2 first:border-none py-2"
       (click)="selectStep(item.stepNumber)"
-      [class.opacity-50]="coffeePlanService.lastOpenedStep() !== item.stepNumber"
-      [class.grayscale]="coffeePlanService.lastOpenedStep() !== item.stepNumber">
+      [class.opacity-50]="wizardService.lastOpenedStep() !== item.stepNumber"
+      [class.grayscale]="wizardService.lastOpenedStep() !== item.stepNumber">
 
       <span class="text-[#0E8684] font-extrabold text-xl">{{item.stepNumber}}</span>
 
