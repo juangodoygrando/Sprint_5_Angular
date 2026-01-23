@@ -2,12 +2,11 @@ export interface StepOption {
   stepOptionId: number;
   stepOptionTitle: string;
   stepOptionPrice?: number;
-  stepOptionQuantity?: number;
-  stepOptionCapsuleQuantity?: number;
+  quantityType?: 'regular' | 'capsule';
+  quantities?: { regular: number; capsule: number };
+  stepOptionDeliveryQuantity?: number;
   stepOptionDescribe: string;
 }
-
-
 
 export type SelectedOption = {
   brew: StepOption;
