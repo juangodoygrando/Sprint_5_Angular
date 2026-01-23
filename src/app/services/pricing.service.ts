@@ -1,13 +1,13 @@
 import { inject, Injectable } from '@angular/core';
 import { CoffeePlanService } from './coffee-plan.service';
-import { StepperService } from './stepper.service';
+import { stepperData } from '../data/steppers.data';
 
 @Injectable({
   providedIn: 'root',
 })
 export class PricingService {
   coffeePlanService = inject(CoffeePlanService);
-  stepperData = inject(StepperService);
+
 
   calculatePrice() {
     if (!this.coffeePlanService.isOrderComplete()) return;
@@ -21,12 +21,12 @@ export class PricingService {
       !options.bag.stepOptionCapsuleQuantity ||
       !options.bag.stepOptionQuantity ||
       !options.delivery.stepOptionQuantity ||
-      !this.stepperData.stepperData().find((s) => s.stepDeliveryPrice)
+      !stepperData.find((s) => s.stepDeliveryPrice)
         ?.stepDeliveryPrice
     )
       return;
 
-    let price 
+    let price
     let base = options.brew.stepOptionPrice * options.bean.stepOptionPrice;
 
     if (options.brew.stepOptionTitle === 'Capsule') {
@@ -35,9 +35,7 @@ export class PricingService {
       price = base * options.bag.stepOptionQuantity;
     }
 
-    const deliveryPrice = this.stepperData
-      .stepperData()
-      .find((s) => s.stepDeliveryPrice)?.stepDeliveryPrice;
+    const deliveryPrice = stepperData.find((s) => s.stepDeliveryPrice)?.stepDeliveryPrice;
 
     let accumulator = 0;
     let shippingQuantity = options.delivery.stepOptionQuantity;

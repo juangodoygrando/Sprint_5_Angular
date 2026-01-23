@@ -1,7 +1,7 @@
 import { computed, inject, Injectable, signal } from '@angular/core';
 import { OrderState } from '../shared/interfaces/steppers.interface';
-import { StepperService } from './stepper.service';
 import { SelectedOption } from '../shared/interfaces/pricing.interface';
+import { stepperData } from '../data/steppers.data';
 
 @Injectable({
   providedIn: 'root',
@@ -33,12 +33,11 @@ export class CoffeePlanService {
 
   lastOpenedStep = signal<string | null>(null);
 
-  stepperData = inject(StepperService);
 
   getStateById(step: keyof OrderState, id: number | null) {
-    let stepSelected = this.stepperData
-      .stepperData()
-      .find((s) => s.orderState === step);
+    let stepSelected = stepperData.find(
+      (stepList) => stepList.orderState === step,
+    );
 
     let searchState = stepSelected?.stepOptions.find(
       (s) => s.stepOptionId === id
@@ -61,9 +60,7 @@ export class CoffeePlanService {
   findOption(step: keyof OrderState, id: number | null) {
     if (id == null) return undefined;
 
-    return this.stepperData
-      .stepperData()
-      .find((s) => s.orderState === step)
+    return stepperData.find((s) => s.orderState === step)
       ?.stepOptions.find((opt) => opt.stepOptionId === id);
   }
   getSelectedOptions(): SelectedOption {
