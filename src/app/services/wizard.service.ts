@@ -4,7 +4,9 @@ import { Injectable, signal } from '@angular/core';
   providedIn: 'root',
 })
 export class WizardService {
+
   currentStep = signal<string | null>(null);
+  
   lastOpenedStep = signal<string | null>(null);
 
   setCurrentStep(step: string) {

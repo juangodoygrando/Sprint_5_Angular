@@ -1,6 +1,7 @@
 import { Component, inject, input } from '@angular/core';
 import { CoffeePlanService } from '../../../../services/coffee-plan.service';
 import { OrderState } from '../../../../shared/interfaces/steppers.interface';
+import { getStateById } from '../../../../data/steppers.data';
 
 @Component({
   selector: 'step-summary',
@@ -14,7 +15,7 @@ export class StepSummaryComponent {
   orderStateList = this.coffeePlanService.orderState;
 
   getTitleById(step: keyof OrderState, id: number | null) {
-    return this.coffeePlanService.getStateById(step, id);
+    return getStateById(step, id);
   }
 
   orderSummary = input<string>();

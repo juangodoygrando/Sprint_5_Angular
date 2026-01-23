@@ -1,4 +1,4 @@
-import { Stepper } from "../shared/interfaces/steppers.interface";
+import { OrderState, Stepper } from '../shared/interfaces/steppers.interface';
 
 export const stepperData: Stepper[] = [
   {
@@ -145,3 +145,24 @@ export const stepperData: Stepper[] = [
     ],
   },
 ];
+
+export function findOption(step: keyof OrderState, id: number | null) {
+
+  if (id == null) return undefined;
+
+  return stepperData
+    .find((s) => s.orderState === step)
+    ?.stepOptions.find((opt) => opt.stepOptionId === id);
+}
+
+export function getStateById(step: keyof OrderState, id: number | null) {
+  let stepSelected = stepperData.find(
+    (stepList) => stepList.orderState === step,
+  );
+
+  let searchState = stepSelected?.stepOptions.find(
+    (s) => s.stepOptionId === id,
+  );
+
+  return searchState?.stepOptionTitle;
+}
