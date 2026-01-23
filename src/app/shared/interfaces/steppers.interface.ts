@@ -5,7 +5,6 @@ export interface Stepper {
   orderState: keyof OrderState;
   stepLabel: string;
   stepTitle: string;
-  stepDeliveryPrice?: number;
   stepOptions: StepOption[];
 }
 
