@@ -25,7 +25,7 @@ export class PricingService {
 
     let base = options.brew.stepOptionPrice * options.bean.stepOptionPrice;
 
-    debugger;
+    
 
     const brewType = options.brew.quantityType;
 
