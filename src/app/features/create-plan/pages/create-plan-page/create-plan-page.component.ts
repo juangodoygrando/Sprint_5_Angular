@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 import { Component, signal } from '@angular/core';
 import { CreatePlanHeroSectionComponent } from '../../create-plan-hero-section/create-plan-hero-section.component';
 import { CreatePlanStepsSectionComponent } from '../../create-plan-steps-section/create-plan-steps-section.component';
@@ -35,4 +36,16 @@ const steps: step[] = [
 })
 export class CreatePlanPageComponent {
   stepArray:step[]=steps
+=======
+import { Component } from '@angular/core';
+
+@Component({
+  selector: 'app-create-plan-page',
+  imports: [],
+  templateUrl: './create-plan-page.component.html',
+  styleUrl: './create-plan-page.component.css'
+})
+export class CreatePlanPageComponent {
+
+>>>>>>> Stashed changes
 }
