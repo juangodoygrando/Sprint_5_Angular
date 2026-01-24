@@ -1,0 +1,46 @@
+<section
+  class="grid grid-cols-1 mx-auto justify-self-end md:grid-cols-3 md:w-11/12"
+>
+  <div class="w-full justify-start">
+    <step-item [stepForItem]="steps" />
+  </div>
+  <div class="w-full md:col-span-2">
+    <step-content [stepForContent]="steps" />
+    <div
+      class="bg-[#343e4c] w-full py-6 px-4 mx-auto my-4 text-sm text-white rounded-lg md:px-16"
+    >
+      <step-summary
+        ><h3 title class="font-thin my-2 opacity-40">
+          ORDER SUMMARY
+        </h3></step-summary
+      >
+    </div>
+    <div class="justify-self-end mb-4">
+      <button-create-plan
+        [disabled]="disabled()"
+        (click)="openModal()"
+        (click)="pricingService.calculatePrice()"
+      ></button-create-plan>
+    </div>
+  </div>
+
+
+  @if(showModal()){<modal (close)="closeModal()">
+    <div class="bg-[#343e4c] w-full sticky top-0 left-0 px-6 py-4 rounded-t-lg">
+      <h3 class="text-white text-xl font-semibold">ORDER SUMMARY</h3>
+    </div>
+    <div class="px-6 py-6 leading-loose text-lg text-[#848990]">
+      <step-summary></step-summary>
+    </div>
+    <div class="px-6 pb-6 text-xs leading-relaxed text-gray-600">
+      <p>
+        Is this correct? You can proceed to checkout or go back to plan
+        selection if something is off. Subscription discount codes can also be
+        redeemed at the checkout.
+      </p>
+    </div>
+    <div class="px-6 pb-6">
+      <button-create-plan label="Checkout - {{totalPrice()}}€ /mo"></button-create-plan>
+    </div> </modal
+  >}
+</section>

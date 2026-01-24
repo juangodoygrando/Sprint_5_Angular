@@ -1,0 +1,22 @@
+<div>
+  <ng-content select="[title]"></ng-content>
+  <p class="text-xl font-extrabold">
+    "I drink my coffe using
+    <span class="textCian">{{
+      getTitleById("brewMethod", orderStateList().brewMethod) || "_____"
+    }}</span
+    >, with a
+    <span class="textCian">{{
+      getTitleById("beanType", orderStateList().beanType) || "_____"
+    }}</span>
+    type of bean.
+    <span class="textCian">{{
+      getTitleById("bagSize", orderStateList().bagSize) || "_____"
+    }}</span>
+    sent to me
+    <span class="textCian">{{
+      getTitleById("delivery", orderStateList().delivery) || "_____"
+    }}</span>
+    "
+  </p>
+</div>

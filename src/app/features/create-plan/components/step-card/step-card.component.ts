@@ -5,7 +5,7 @@ import { step } from '../../../../shared/interfaces/create-plan-steps.interface'
   selector: 'step-card',
   imports: [],
   templateUrl: './step-card.component.html',
-  styleUrl: './step-card.component.css',
+  
 })
 export class StepCardComponent {
 

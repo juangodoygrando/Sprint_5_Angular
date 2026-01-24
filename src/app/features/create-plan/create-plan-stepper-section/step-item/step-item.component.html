@@ -1,0 +1,20 @@
+<nav class="py-6">
+  <ol class="flex flex-col md:w-7/12">
+    @for (item of stepForItem(); track $index) {
+      <li
+        class="flex flex-row gap-6 py-6 items-center border-t-2 first:border-none first:pt-0"
+        (click)="selectStep(item.stepNumber)"
+        [class.opacity-50]="wizardService.lastOpenedStep() !== item.stepNumber"
+        [class.grayscale]="wizardService.lastOpenedStep() !== item.stepNumber"
+      >
+        <span class="text-[#0E8684] font-extrabold text-xl">{{
+          item.stepNumber
+        }}</span>
+
+        <h2 class="font-extrabold text-xl text-[#343e4c]">
+          {{ item.stepLabel }}
+        </h2>
+      </li>
+    }
+  </ol>
+</nav>
