@@ -6,7 +6,7 @@ import { WizardService } from '../../../../services/wizard.service';
   selector: 'step-item',
   imports: [],
   templateUrl: './step-item.component.html',
-  styleUrl: './step-item.component.css',
+  
 })
 export class StepItemComponent {
   stepForItem = input<Stepper[]>();
