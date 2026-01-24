@@ -18,7 +18,6 @@ import { stepperData } from '../../../../data/steppers.data';
     ModalComponent,
   ],
   templateUrl: './stepper.component.html',
-  styleUrl: './stepper.component.css',
 })
 export class StepperComponent {
   coffeePlanService = inject(CoffeePlanService);

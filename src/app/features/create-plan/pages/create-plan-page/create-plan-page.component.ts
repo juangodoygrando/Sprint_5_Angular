@@ -1,4 +1,4 @@
-import { Component, signal } from '@angular/core';
+import { Component } from '@angular/core';
 import { CreatePlanHeroSectionComponent } from '../../create-plan-hero-section/create-plan-hero-section.component';
 import { CreatePlanStepsSectionComponent } from '../../create-plan-steps-section/create-plan-steps-section.component';
 import { step } from '../../../../shared/interfaces/create-plan-steps.interface';
@@ -31,7 +31,7 @@ const steps: step[] = [
   selector: 'create-plan-page',
   imports: [CreatePlanHeroSectionComponent, CreatePlanStepsSectionComponent, StepperComponent],
   templateUrl: './create-plan-page.component.html',
-  styleUrl: './create-plan-page.component.css',
+  
 })
 export class CreatePlanPageComponent {
   stepArray:step[]=steps

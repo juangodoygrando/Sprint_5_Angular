@@ -1,6 +1,6 @@
 import { inject, Injectable } from '@angular/core';
 import { CoffeePlanService } from './coffee-plan.service';
-import { deliveryPrice, stepperData } from '../data/steppers.data';
+import { deliveryPrice } from '../data/steppers.data';
 
 @Injectable({
   providedIn: 'root',
@@ -25,11 +25,9 @@ export class PricingService {
 
     let base = options.brew.stepOptionPrice * options.bean.stepOptionPrice;
 
-    
-
     const brewType = options.brew.quantityType;
 
-    const quantityBag = options.bag.quantities?.[brewType];
+    const quantityBag = options.bag.quantities[brewType];
 
     const price = base * quantityBag;
 
