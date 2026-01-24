@@ -1,3 +1,8 @@
-.circle{
-  @apply w-6 h-6 border-2 border-[#66D2CF] rounded-full
+.circle {
+  width: 1.5rem;
+  height: 1.5rem;
+  border-width: 2px;
+  border-style: solid;
+  border-color: #66D2CF;
+  border-radius: 9999px;
 }
