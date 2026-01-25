@@ -24,23 +24,28 @@
     </div>
   </div>
 
-
-  @if(showModal()){<app-modal (close)="closeModal()">
-    <div class="bg-[#343e4c] w-full sticky top-0 left-0 px-6 py-4 rounded-t-lg">
-      <h3 class="text-white text-xl font-semibold">ORDER SUMMARY</h3>
-    </div>
-    <div class="px-6 py-6 leading-loose text-lg text-[#848990]">
-      <app-step-summary></app-step-summary>
-    </div>
-    <div class="px-6 pb-6 text-xs leading-relaxed text-gray-600">
-      <p>
-        Is this correct? You can proceed to checkout or go back to plan
-        selection if something is off. Subscription discount codes can also be
-        redeemed at the checkout.
-      </p>
-    </div>
-    <div class="px-6 pb-6">
-      <app-button-create-plan label="Checkout - {{totalPrice()}}€ /mo"></app-button-create-plan>
-    </div> </app-modal
-  >}
+  @if (showModal()) {
+    <app-modal (close)="closeModal()">
+      <div
+        class="bg-[#343e4c] w-full sticky top-0 left-0 px-6 py-4 rounded-t-lg"
+      >
+        <h3 class="text-white text-xl font-semibold">ORDER SUMMARY</h3>
+      </div>
+      <div class="px-6 py-6 leading-loose text-lg text-[#848990]">
+        <app-step-summary></app-step-summary>
+      </div>
+      <div class="px-6 pb-6 text-xs leading-relaxed text-gray-600">
+        <p>
+          Is this correct? You can proceed to checkout or go back to plan
+          selection if something is off. Subscription discount codes can also be
+          redeemed at the checkout.
+        </p>
+      </div>
+      <div class="px-6 pb-6">
+        <app-button-create-plan
+          label="Checkout - {{ totalPrice() }}€ /mo"
+        ></app-button-create-plan>
+      </div>
+    </app-modal>
+  }
 </section>
