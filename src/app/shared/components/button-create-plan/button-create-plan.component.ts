@@ -1,7 +1,7 @@
 import { Component ,input } from '@angular/core';
 
 @Component({
-  selector: 'button-create-plan',
+  selector: 'app-button-create-plan',
   imports: [],
   templateUrl: './button-create-plan.component.html',
   styleUrl: './button-create-plan.component.css',

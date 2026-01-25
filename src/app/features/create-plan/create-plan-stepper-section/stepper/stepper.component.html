@@ -16,16 +16,16 @@
       >
     </div>
     <div class="justify-self-end mb-4">
-      <button-create-plan
+      <app-button-create-plan
         [disabled]="disabled()"
         (click)="openModal()"
         (click)="pricingService.calculatePrice()"
-      ></button-create-plan>
+      ></app-button-create-plan>
     </div>
   </div>
 
 
-  @if(showModal()){<modal (close)="closeModal()">
+  @if(showModal()){<app-modal (close)="closeModal()">
     <div class="bg-[#343e4c] w-full sticky top-0 left-0 px-6 py-4 rounded-t-lg">
       <h3 class="text-white text-xl font-semibold">ORDER SUMMARY</h3>
     </div>
@@ -40,7 +40,7 @@
       </p>
     </div>
     <div class="px-6 pb-6">
-      <button-create-plan label="Checkout - {{totalPrice()}}€ /mo"></button-create-plan>
-    </div> </modal
+      <app-button-create-plan label="Checkout - {{totalPrice()}}€ /mo"></app-button-create-plan>
+    </div> </app-modal
   >}
 </section>
