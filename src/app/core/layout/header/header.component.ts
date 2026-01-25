@@ -1,4 +1,3 @@
-import { NgIf } from '@angular/common';
 import { Component, signal } from '@angular/core';
 
 @Component({
