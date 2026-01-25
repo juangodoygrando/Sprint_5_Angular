@@ -8,7 +8,7 @@ export interface StepOption {
   stepOptionDescribe: string;
 }
 
-export type SelectedOption = {
+export interface SelectedOption {
   brew: StepOption;
   bean: StepOption;
   bag: StepOption;
