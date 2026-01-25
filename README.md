@@ -243,6 +243,7 @@ The project is configured for Netlify deployment:
 - Tailwind CSS is configured with custom fonts (Barlow and Fraunces).
 - All routes redirect to `/create-plan` by default.
  
+ 👉 [Go to site](https://coffeeroasters-sprint5.netlify.app/create-plan)
 ---
  
 Enjoy using Cofferoasters!
