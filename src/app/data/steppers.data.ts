@@ -158,11 +158,11 @@ export function findOption(step: keyof OrderState, id: number | null) {
 }
 
 export function getStateById(step: keyof OrderState, id: number | null) {
-  let stepSelected = stepperData.find(
+  const stepSelected = stepperData.find(
     (stepList) => stepList.orderState === step,
   );
 
-  let searchState = stepSelected?.stepOptions.find(
+  const searchState = stepSelected?.stepOptions.find(
     (s) => s.stepOptionId === id,
   );
 
