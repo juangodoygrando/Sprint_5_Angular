@@ -12,25 +12,23 @@
       <img
         src="assets/plan/desktop/icon-arrow.svg"
         class="w-4 transition-transform"
+        alt="arrow icon"
       />
     </summary>
 
     <fieldset class=" grid gap-3 py-2 md:grid-cols-3  items-stretch">
       @for (option of item.stepOptions; track option.stepOptionId) {
-      <div
-        class="option-card "
-        [class.selected]="
-          coffeePlanService.orderState()[item.orderState] ===
-          option.stepOptionId
-        "
-        (click)="selectedId(item.orderState, option.stepOptionId)"
-
-      >
-        <p class="font-bold text-sm mb-2 md:text-base">{{ option.stepOptionTitle }}</p>
-        <p class="text-xs font-light opacity-90 md">
-          {{ option.stepOptionDescribe }}
-        </p>
-      </div>
+      <button
+  type="button"
+  class="option-card text-left"
+  [class.selected]="coffeePlanService.orderState()[item.orderState] === option.stepOptionId"
+  (click)="selectedId(item.orderState, option.stepOptionId)"
+>
+  <p class="font-bold text-sm mb-2 md:text-base">{{ option.stepOptionTitle }}</p>
+  <p class="text-xs font-light opacity-90 md">
+    {{ option.stepOptionDescribe }}
+  </p>
+</button>
       }
     </fieldset>
   </details>
