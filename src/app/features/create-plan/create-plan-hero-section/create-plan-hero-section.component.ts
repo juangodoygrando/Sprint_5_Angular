@@ -1,7 +1,7 @@
 import { Component, signal } from '@angular/core';
 
 @Component({
-  selector: 'create-plan-hero-section',
+  selector: 'app-create-plan-hero-section',
   imports: [],
   templateUrl: './create-plan-hero-section.component.html',
   styleUrl: './create-plan-hero-section.component.css',
@@ -9,7 +9,7 @@ import { Component, signal } from '@angular/core';
 export class CreatePlanHeroSectionComponent {
 
   esMovil = window.innerWidth < 768;
-  
+
   windowWidth = signal(this.esMovil);
 
 
