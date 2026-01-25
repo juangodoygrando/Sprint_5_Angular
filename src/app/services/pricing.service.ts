@@ -23,7 +23,7 @@ export class PricingService {
     )
       return;
 
-    let base = options.brew.stepOptionPrice * options.bean.stepOptionPrice;
+    const base = options.brew.stepOptionPrice * options.bean.stepOptionPrice;
 
     const brewType = options.brew.quantityType;
 
