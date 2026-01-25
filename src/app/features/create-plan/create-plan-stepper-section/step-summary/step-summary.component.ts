@@ -3,7 +3,7 @@ import { CoffeePlanService } from '../../../../services/coffee-plan.service';
 import { getStateById } from '../../../../data/steppers.data';
 
 @Component({
-  selector: 'step-summary',
+  selector: 'app-step-summary',
   imports: [],
   templateUrl: './step-summary.component.html',
   styleUrl: './step-summary.component.css',

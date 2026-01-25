@@ -28,10 +28,10 @@ const steps: step[] = [
 ];
 
 @Component({
-  selector: 'create-plan-page',
+  selector: 'app-create-plan-page',
   imports: [CreatePlanHeroSectionComponent, CreatePlanStepsSectionComponent, StepperComponent],
   templateUrl: './create-plan-page.component.html',
-  
+
 })
 export class CreatePlanPageComponent {
   stepArray:step[]=steps

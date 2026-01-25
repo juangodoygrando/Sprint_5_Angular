@@ -12,11 +12,11 @@ import { stepperData } from '../../../../data/steppers.data';
   selector: 'app-stepper',
   imports: [
     StepItemComponent,
-    StepContentComponent,
     StepSummaryComponent,
     ButtonCreatePlanComponent,
     ModalComponent,
-  ],
+    StepContentComponent
+],
   templateUrl: './stepper.component.html',
 })
 export class StepperComponent {

@@ -4,7 +4,7 @@ import { CoffeePlanService } from '../../../../services/coffee-plan.service';
 import { WizardService } from '../../../../services/wizard.service';
 
 @Component({
-  selector: 'step-content',
+  selector: 'app-step-content',
   imports: [],
   templateUrl: './step-content.component.html',
   styleUrl: './step-content.component.css',
