@@ -1,0 +1,4 @@
+.maskTitle {
+  mask-image: linear-gradient(to top, transparent 0%, black 200%);
+  -webkit-mask-image: linear-gradient(to top, transparent 0%, black 200%);
+}

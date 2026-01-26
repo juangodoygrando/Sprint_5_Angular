@@ -1,36 +1,43 @@
 <div class="bg-white py-6 w-full">
   @for (item of stepForContent(); track item.orderState) {
-  <details
-    class="mb-12"
-    [open]="this.wizardService.currentStep() === item.stepNumber"
-    (toggle)="onToggle(item.stepNumber, $event)"
-  >
-    <summary
-      class="text-gray-500 font-extrabold list-none flex flex-row justify-between items-center"
+    <details
+      class="mb-12"
+      [open]="this.wizardService.currentStep() === item.stepNumber"
+      (toggle)="onToggle(item.stepNumber, $event)"
     >
-      <h2 class="w-10/12 text-xl  tracking-wide md:text-3xl">{{ item.stepTitle }}</h2>
-      <img
-        src="assets/plan/desktop/icon-arrow.svg"
-        class="w-4 transition-transform"
-        alt="arrow icon"
-      />
-    </summary>
+      <summary
+        class="text-gray-500 font-extrabold list-none flex flex-row justify-between items-center"
+      >
+        <h2 class="w-10/12 text-xl tracking-wide md:text-3xl">
+          {{ item.stepTitle }}
+        </h2>
+        <img
+          src="assets/plan/desktop/icon-arrow.svg"
+          class="w-4 transition-transform"
+          alt="arrow icon"
+        />
+      </summary>
 
-    <fieldset class=" grid gap-3 py-2 md:grid-cols-3  items-stretch">
-      @for (option of item.stepOptions; track option.stepOptionId) {
-      <button
-  type="button"
-  class="option-card text-left"
-  [class.selected]="coffeePlanService.orderState()[item.orderState] === option.stepOptionId"
-  (click)="selectedId(item.orderState, option.stepOptionId)"
->
-  <p class="font-bold text-sm mb-2 md:text-base">{{ option.stepOptionTitle }}</p>
-  <p class="text-xs font-light opacity-90 md">
-    {{ option.stepOptionDescribe }}
-  </p>
-</button>
-      }
-    </fieldset>
-  </details>
+      <fieldset class="grid gap-3 py-2 md:grid-cols-3 items-stretch">
+        @for (option of item.stepOptions; track option.stepOptionId) {
+          <button
+            type="button"
+            class="option-card text-left"
+            [class.selected]="
+              coffeePlanService.orderState()[item.orderState] ===
+              option.stepOptionId
+            "
+            (click)="selectedId(item.orderState, option.stepOptionId)"
+          >
+            <p class="font-bold text-sm mb-2 md:text-base">
+              {{ option.stepOptionTitle }}
+            </p>
+            <p class="text-xs font-light opacity-90 md">
+              {{ option.stepOptionDescribe }}
+            </p>
+          </button>
+        }
+      </fieldset>
+    </details>
   }
 </div>
