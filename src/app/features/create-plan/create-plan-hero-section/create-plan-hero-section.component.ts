@@ -7,7 +7,5 @@ import { Component } from '@angular/core';
   styleUrl: './create-plan-hero-section.component.css',
 })
 export class CreatePlanHeroSectionComponent {
-  /* esMovil = window.innerWidth < 768;
-
-  windowWidth = signal(this.esMovil); */
+  
 }

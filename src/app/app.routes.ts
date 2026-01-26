@@ -1,5 +1,6 @@
 import { Routes } from '@angular/router';
 import { CreatePlanPageComponent } from './features/create-plan/pages/create-plan-page/create-plan-page.component';
+import { HomePageComponent } from './features/home/page/home-page/home-page.component';
 
 export const routes: Routes = [
   {
@@ -7,7 +8,11 @@ export const routes: Routes = [
     component: CreatePlanPageComponent,
   },
   {
+    path: 'home',
+    component: HomePageComponent,
+  },
+  {
     path: '**',
-    redirectTo: '/create-plan',
+    redirectTo: '/home',
   },
 ];
