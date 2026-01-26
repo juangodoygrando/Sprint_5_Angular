@@ -1,4 +1,4 @@
-import { Component, signal } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-create-plan-hero-section',
@@ -7,10 +7,7 @@ import { Component, signal } from '@angular/core';
   styleUrl: './create-plan-hero-section.component.css',
 })
 export class CreatePlanHeroSectionComponent {
+  /* esMovil = window.innerWidth < 768;
 
-  esMovil = window.innerWidth < 768;
-
-  windowWidth = signal(this.esMovil);
-
-
+  windowWidth = signal(this.esMovil); */
 }

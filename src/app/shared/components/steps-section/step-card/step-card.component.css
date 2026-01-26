@@ -1,0 +1,8 @@
+:host {
+  --step-text: white;
+}
+
+:host[data-theme="primary"] {
+
+  --step-text: #000000;
+}

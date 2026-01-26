@@ -1,0 +1,18 @@
+.circle {
+  width: 1.5rem;
+  height: 1.5rem;
+  border-width: 2px;
+  border-style: solid;
+  border-color: #66d2cf;
+  border-radius: 9999px;
+}
+
+:host {
+  --step-bg: #343e4c;
+  --step-bg-circle: transparent;
+}
+
+:host[data-theme="primary"] {
+  --step-bg: #ffffff;
+  --step-bg-circle: white;
+}
