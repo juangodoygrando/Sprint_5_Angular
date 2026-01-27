@@ -1,6 +1,17 @@
-<div class=" flex flex-col gap-16">
-  <app-home-hero-section/>
-  <app-home-our-collection-section/>
-  <app-home-why-choose-us-section/>
-</div>
+<div class="flex flex-col gap-16 mb-16">
+  <app-home-hero-section />
+  <app-home-our-collection-section />
+  <app-home-why-choose-us-section />
 
+  <div
+    class="flex flex-col justify-center w-3/4 mx-auto gap-10  md:mx-auto md:justify-center md:w-10/12"
+  >
+    <h1 class="flex mx-auto text-2xl font-bold text-gray-500 md:mx-0">
+      How it works
+    </h1>
+    <app-steps-section
+      [step]="stepArray"
+      [variant]="'primary'"
+    /><app-button-create-plan  />
+  </div>
+</div>
