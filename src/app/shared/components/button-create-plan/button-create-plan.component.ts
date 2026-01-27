@@ -1,4 +1,5 @@
-import { Component ,input } from '@angular/core';
+import { Component ,inject,input } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-button-create-plan',
@@ -8,4 +9,12 @@ import { Component ,input } from '@angular/core';
 export class ButtonCreatePlanComponent {
   disabled = input<boolean>(false);
   label = input<string>('Create your plan');
+
+  private router = inject(Router);
+
+  go() {
+    if (!this.disabled()) {
+      this.router.navigate(['/create-plan']);
+    }
+  }
 }
