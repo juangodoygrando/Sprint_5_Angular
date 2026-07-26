@@ -1,6 +1,6 @@
 import { Component, inject, input } from '@angular/core';
-import { Stepper } from '../../../../shared/interfaces/steppers.interface';
-import { WizardService } from '../../../../services/wizard.service';
+import { Stepper } from '../../../../../shared/interfaces/steppers.interface';
+import { WizardService } from '../../../../../services/wizard.service';
 
 @Component({
   selector: 'app-step-item',

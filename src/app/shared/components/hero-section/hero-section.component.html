@@ -1,0 +1,24 @@
+<div class="hero" [class]="hero().className">
+  <div
+    class="relative z-10 w-full p-6 text-white text-center lg:text-left md:ml-16"
+  >
+    <h1 class="text-3xl font-black mb-4 leading-tight md:text-5xl">
+      {{ hero().title }}
+    </h1>
+
+    <p
+      class="text-xs leading-5 opacity-75 text-[13px] tracking-wider font-light md:w-[38%]"
+    >
+      {{ hero().description }}
+    </p>
+
+    @if (hero().button) {
+      <a
+        [routerLink]="hero().button!.link"
+        class="mt-6 inline-block bg-[#0e8784] text-white px-5 py-2 rounded-md font-serif font-black transition-colors duration-200"
+      >
+        {{ hero().button!.label }}
+      </a>
+    }
+  </div>
+</div>

@@ -2,11 +2,12 @@ import { Component, computed, inject, signal } from '@angular/core';
 import { StepItemComponent } from '../step-item/step-item.component';
 import { StepContentComponent } from '../step-content/step-content.component';
 import { StepSummaryComponent } from '../step-summary/step-summary.component';
-import { CoffeePlanService } from '../../../../services/coffee-plan.service';
-import { ButtonCreatePlanComponent } from '../../../../shared/components/button-create-plan/button-create-plan.component';
-import { PricingService } from '../../../../services/pricing.service';
-import { stepperData } from '../../../../data/steppers.data';
-import { ModalComponent } from "../../../../shared/components/modal/modal.component";
+import { CoffeePlanService } from '../../../../../services/coffee-plan.service';
+
+import { PricingService } from '../../../../../services/pricing.service';
+import { stepperData } from '../../../../../data/steppers.data';
+import { ModalComponent } from "../../../../../shared/components/modal/modal.component";
+import { ButtonCreatePlanComponent } from '../../../../../shared/components/button-create-plan/button-create-plan.component';
 
 @Component({
   selector: 'app-stepper',

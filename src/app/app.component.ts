@@ -6,10 +6,10 @@ import { FooterComponent } from './core/layout/footer/footer.component';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet,HeaderComponent,FooterComponent],
+  imports: [RouterOutlet, HeaderComponent, FooterComponent],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  styleUrl: './app.component.css',
 })
 export class AppComponent {
-  title = 'cofferoasters';
+  title = 'Cofferoasters';
 }

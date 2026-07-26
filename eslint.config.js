@@ -19,7 +19,7 @@ export default defineConfig([
         "error",
         {
           type: "attribute",
-          prefix: "app",
+          prefix: "coffeeroaster",
           style: "camelCase",
         },
       ],
@@ -27,7 +27,7 @@ export default defineConfig([
         "error",
         {
           type: "element",
-          prefix: "app",
+          prefix: "",
           style: "kebab-case",
         },
       ],

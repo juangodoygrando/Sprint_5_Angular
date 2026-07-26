@@ -1,0 +1,10 @@
+::ng-deep .home {
+  height: 25rem;
+  background-image: url('/assets/home/mobile/image-hero-coffeepress.jpg');
+}
+
+@media (min-width: 768px) {
+  ::ng-deep .home {
+    background-image: url('/assets/home/desktop/image-hero-coffeepress.jpg');
+  }
+}

@@ -1,0 +1,10 @@
+::ng-deep .createPlan {
+  height: 15rem;
+  background-image: url('/assets/plan/mobile/image-hero-blackcup.jpg');
+}
+
+@media (min-width: 768px) {
+  ::ng-deep .createPlan {
+    background-image: url('/assets/plan/desktop/image-hero-blackcup.jpg');
+  }
+}
